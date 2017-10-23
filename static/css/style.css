@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eee;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+p {
+    color: #1976D2;
+}
+
+a,
+h1 {
+    color: #E91E63;
+}
+
+h2 {
+    color: #F48FB1;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: large;
+}
+
+.content-text {
+    font-size: medium;
+    border-left: solid thick #F48FB1;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-text {
+    font-size: smaller;
+}

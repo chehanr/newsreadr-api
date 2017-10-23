@@ -1,0 +1,12 @@
+{% extends "layout.html" %} {% block title %}API{% endblock %} {% block head %} {{ super() }} {% endblock %} {% block content
+%}
+<h2>API</h2>
+<p class="content-text">
+    A simple flask based API for
+    <a href="http://infolanka.com/news/">http://infolanka.com/news/</a>
+    <br> Source:
+    <a href="https://github.com/chehanr/newsreadr-api">https://github.com/chehanr/newsreadr-api</a>
+    <br>
+    <a href="{{ url_for('flasgger.apidocs') }}">Click here</a> to read the API documentation.
+</p>
+{% endblock %}

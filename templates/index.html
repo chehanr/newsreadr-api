@@ -1,0 +1,6 @@
+{% extends "layout.html" %} {% block title %}{% endblock %} {% block head %} {{ super() }} {% endblock %} {% block content
+%}
+<p class="content-text">
+    <a href="{{ url_for('api_root') }}">Click here</a> for the API.
+</p>
+{% endblock %}

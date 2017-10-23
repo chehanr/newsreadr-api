@@ -1,0 +1,40 @@
+Endpoint returning archive index
+Archive index retrieved from the site sidebar
+---
+tags:
+  - version 1
+responses:
+  200:
+    description: A list of the archive index
+    schema:
+      required: 
+        - archives-list
+        - page-url
+        - remote-status-code
+        - type
+      properties: 
+        archives-list: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              months: 
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    month: 
+                      type: string
+                    month-uri: 
+                      type: string
+              year: 
+                type: string
+        page-url: 
+          type: string
+          description: URL of the page
+        remote-status-code: 
+          type: integer
+          description: Response status code of the remote site
+        response-type: 
+          type: string
+          description: Type of the response
