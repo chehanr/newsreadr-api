@@ -9,6 +9,6 @@ Local Usage:
  - Run `heroku local -f Procfile`
 
 > For Windows (starts without `Gunicorn`), 
-> Run `heroku local -fProcfile.windows` or `python app.py`
+> Run `heroku local -f Procfile.windows` or `python app.py`
 
 Documentation: Click [here](https://newsreadr.herokuapp.com/apidocs/) to read the API documentation.
