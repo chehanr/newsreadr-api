@@ -124,24 +124,6 @@ def get_links_list(tr_tag):
     return links_list
 
 
-def get_videos_list(tr_tag):
-    """"Scrape the Videos list in the side bar."""
-    videos_list = []
-
-    for a_videos in tr_tag.find_all('a', attrs={'class': 'links'}):
-        video_name = a_videos.get_text(strip=True)
-        video_url = a_videos['href']
-
-        video = {
-            'video-name': video_name,
-            'video-url': video_url
-        }
-
-        videos_list.append(video)
-
-    return videos_list
-
-
 def fetch_articles(base_url, page):
     """Fetch articles from a particular page."""
     if not page in {0, 1}:
