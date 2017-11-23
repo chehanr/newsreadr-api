@@ -56,10 +56,10 @@ def get_articles(soup):
 
             article = {
                 'index': i,
-                'title': article_title,
+                'title': article_title.strip(),
                 'url': article_url,
                 'thumbnail-uri': article_thumbnail_uri,
-                'body': article_body,
+                'body': article_body.strip(),
                 'type': article_type,
                 'media': article_media
             }
