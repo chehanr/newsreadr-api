@@ -6,6 +6,7 @@
 from flasgger import Swagger
 from flask import Flask, render_template
 from flask_compress import Compress
+from flask_cors import CORS, cross_origin
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -44,6 +45,7 @@ APP.config['SWAGGER'] = {
 }
 SWAG = Swagger(APP, template=TEMPLATE)
 Compress(APP)
+CORS(APP)
 
 
 @APP.route('/')
