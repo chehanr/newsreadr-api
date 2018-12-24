@@ -11,6 +11,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 from api.v1.routes import API as api_v1
+from api.v2.routes import API as api_v2
 
 COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml',
                       'application/json', 'application/javascript']
@@ -36,6 +37,8 @@ TEMPLATE = {
 
 APP = Flask(__name__)
 APP.register_blueprint(api_v1, url_prefix='/api/v1')
+APP.register_blueprint(api_v2, url_prefix='/api/v2')
+
 # TODO make changes to rate limit.
 LIMITER = Limiter(APP, key_func=get_remote_address,
                   default_limits=['20 per second', '10000 per day'])
