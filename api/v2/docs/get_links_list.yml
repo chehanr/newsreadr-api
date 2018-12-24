@@ -1,0 +1,47 @@
+Endpoint returning link indexes (per list-type)
+Pass a list-type and list link indexes retrieved from the site sidebar
+---
+tags:
+  - version 2
+parameters:
+  - name: list-type
+    in: query
+    type: string
+    enum: ['news-paper', 'news-site', 'radio', 'tv', 'video']
+    required: true
+    default: news-paper
+    description: Required link list type
+responses:
+  200:
+    description: A list of the link index
+    schema:
+      required: 
+        - link-list
+        - link-list-type
+        - page-url
+        - remote-status-code
+        - type
+      properties: 
+        link-list: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              link-href: 
+                type: string
+                description: Link URL
+              link-text: 
+                type: string
+                description: Link associated text
+        list-type: 
+          type: string
+          description: List type requested
+        page-url: 
+          type: string
+          description: URL of the page
+        remote-status-code: 
+          type: integer
+          description: Response status code of the remote site
+        response-type: 
+          type: string
+          description: Type of the response
