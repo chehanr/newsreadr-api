@@ -54,6 +54,6 @@ responses:
         remote-status-code: 
           type: integer
           description: Response status code of the remote site
-        response-type: 
+        request-type: 
           type: string
-          description: Type of the response
+          description: Type of the request

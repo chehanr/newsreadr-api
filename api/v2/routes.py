@@ -27,7 +27,7 @@ def get_articles():
         BASE_URL, page)
 
     results = {
-        'response-type': 'get-articles',
+        'request-type': 'get-articles',
         'page-url': page_url,
         'remote-status-code': remote_status_code,
         'page': page,
@@ -49,7 +49,7 @@ def get_archives():
         year, month, page)
 
     results = {
-        'response-type': 'get-archives',
+        'request-type': 'get-archives',
         'page-url': page_url,
         'remote-status-code': remote_status_code,
         'year': year,
@@ -69,7 +69,7 @@ def get_archives_list():
     page_url, remote_status_code, archives_list = fetch_archives_list()
 
     results = {
-        'response-type': 'get-archives-list',
+        'request-type': 'get-archives-list',
         'page-url': page_url,
         'remote-status-code': remote_status_code,
         'archives-list': archives_list
@@ -87,7 +87,7 @@ def get_links_list():
         list_type)
 
     results = {
-        'response-type': 'get-link-list',
+        'request-type': 'get-link-list',
         'list-type': list_type,
         'page-url': page_url,
         'remote-status-code': remote_status_code,
