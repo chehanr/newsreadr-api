@@ -56,11 +56,6 @@ responses:
               title:
                 type: string
                 description: Title of the article
-              type:
-                description: Type of the article
-                items:
-                  type: array
-                default: [article, image, video]  
               url:
                 type: string
                 description: External URL of the article

@@ -27,7 +27,6 @@ def get_articles(soup):
         article_url = None
         article_thumbnail_uri = None
         article_body = None
-        article_type = 'article'
         article_media = None
 
         # h3 for "index<num>.html" pages.
@@ -48,18 +47,12 @@ def get_articles(soup):
             for iframe_article in div_article.find_all('iframe', recursive=False):
                 article_media = iframe_article.attrs['src']
 
-            if not article_body and article_thumbnail_uri:
-                article_type = 'image'
-            if article_media:
-                article_type = 'video'
-
             article = {
                 'index': i,
                 'title': article_title.strip(),
                 'url': article_url,
                 'thumbnail-uri': article_thumbnail_uri,
                 'body': article_body.strip(),
-                'type': article_type,
                 'media': article_media
             }
 
