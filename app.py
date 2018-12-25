@@ -9,6 +9,7 @@ from flask_compress import Compress
 from flask_cors import CORS, cross_origin
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from decouple import config
 
 from api.v1.routes import API as api_v1
 from api.v2.routes import API as api_v2
@@ -64,4 +65,5 @@ def api_root():
 
 
 if __name__ == '__main__':
-    APP.run(debug=False, use_reloader=True)
+    APP.run(debug=config('DEBUG', default=False,
+                         cast=bool), use_reloader=True)
