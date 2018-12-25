@@ -33,9 +33,6 @@ responses:
               index:
                 type: integer
                 description: Index of the article
-              media:
-                type: string
-                description: Media URI if exists
               thumbnail-uri:
                 type: string
                 description: Thumbnail URI if exists

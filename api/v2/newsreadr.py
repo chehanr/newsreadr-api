@@ -42,10 +42,10 @@ def get_articles(soup):
 
             for img_article in div_article.find_all('img', recursive=False):
                 article_thumbnail_uri = img_article.attrs['src']
-                # For videos.
-
+            
+            # For videos (`article_url` is replaced).
             for iframe_article in div_article.find_all('iframe', recursive=False):
-                article_media = iframe_article.attrs['src']
+                article_url = iframe_article.attrs['src']
 
             article = {
                 'index': i,
@@ -53,7 +53,6 @@ def get_articles(soup):
                 'url': article_url,
                 'thumbnail-uri': article_thumbnail_uri,
                 'body': article_body.strip(),
-                'media': article_media
             }
 
             articles.append(article)
