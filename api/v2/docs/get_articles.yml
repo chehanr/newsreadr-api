@@ -33,9 +33,9 @@ responses:
               index:
                 type: integer
                 description: Index of the article
-              thumbnail-uri:
+              thumbnail-url:
                 type: string
-                description: Thumbnail URI if exists
+                description: Thumbnail URL if exists
               title:
                 type: string
                 description: Title of the article

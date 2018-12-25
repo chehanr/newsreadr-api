@@ -4,6 +4,7 @@ import re
 
 import requests
 from bs4 import BeautifulSoup, SoupStrainer
+from urllib.parse import urljoin
 from .constants import BASE_URL
 
 
@@ -25,7 +26,7 @@ def get_articles(soup):
     for i, td_article in enumerate(soup.find_all('td', attrs={'valign': 'top'})):
         article_title = None
         article_url = None
-        article_thumbnail_uri = None
+        article_thumbnail_url = None
         article_body = None
         article_media = None
 
@@ -41,8 +42,9 @@ def get_articles(soup):
                 article_url = a_article.attrs['href']
 
             for img_article in div_article.find_all('img', recursive=False):
-                article_thumbnail_uri = img_article.attrs['src']
-            
+                thumbnail_uri = img_article.attrs['src']
+                if thumbnail_uri: article_thumbnail_url = urljoin(BASE_URL, thumbnail_uri)
+
             # For videos (`article_url` is replaced).
             for iframe_article in div_article.find_all('iframe', recursive=False):
                 article_url = iframe_article.attrs['src']
@@ -51,7 +53,7 @@ def get_articles(soup):
                 'index': i,
                 'title': article_title.strip(),
                 'url': article_url,
-                'thumbnail-uri': article_thumbnail_uri,
+                'thumbnail-url': article_thumbnail_url,
                 'body': article_body.strip(),
             }
 
