@@ -22,7 +22,7 @@ def api_v2_root():
 def get_articles():
     """Get a list of the articles."""
 
-    page = request.args.get('page', default=1, type=int)
+    page = request.args.get('page', default=0, type=int)
     page_url, remote_status_code, available_pages, articles = fetch_articles(
         BASE_URL, page)
 
@@ -44,7 +44,7 @@ def get_archives():
     """Get list of the archived articles."""
     year = request.args.get('year', type=int)
     month = request.args.get('month', type=str)
-    page = request.args.get('page', default=1, type=int)
+    page = request.args.get('page', default=0, type=int)
     page_url, remote_status_code, available_pages, archives = fetch_archives(
         year, month, page)
 

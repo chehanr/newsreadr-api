@@ -119,10 +119,11 @@ def get_links_list(tr_tag):
 
 def fetch_articles(base_url, page):
     """Fetch articles from a particular page."""
-    if not page in {0, 1}:
-        url = '%sindex%s.html' % (base_url, page)
+    if page > 0:
+        page += 1
+        url = '{0}index{1}.html'.format(base_url, page)
     else:
-        url = '%sindex%s.html' % (base_url, '')
+        url = '{0}index.html'.format(base_url)
 
     response = requests.get(url, stream=False)
 
