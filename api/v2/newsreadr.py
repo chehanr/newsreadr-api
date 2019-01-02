@@ -72,7 +72,7 @@ def get_archives_list(soup):
             archive_year = li_archive_year.find(
                 'a', attrs={'class': 'links'}).get_text(strip=True)
         except AttributeError:
-            archive_year = None
+            archive_year = 0000
 
         months = []
 
@@ -88,7 +88,7 @@ def get_archives_list(soup):
             months.append(month)
 
         years = {
-            'year': str(archive_year),
+            'year': int(archive_year),
             'months': months
         }
 

@@ -28,7 +28,7 @@ responses:
                     month-uri: 
                       type: string
               year: 
-                type: string
+                type: integer
         page-url: 
           type: string
           description: URL of the page
